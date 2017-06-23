@@ -37,6 +37,15 @@ describe Loc::LocationCollection do
     expect(collection_1).to_not eq collection_3
   end
 
+  describe "#size" do
+    it "should give location collection size" do
+      collection = described_class.new(
+        [Loc::Location[1, 2], Loc::Location[3, 4]]
+      )
+      expect(collection.size).to eq 2
+    end
+  end
+
   describe "#each" do
     let(:array) { [Loc::Location[1, 2], Loc::Location[3, 4]] }
     let(:collection) { described_class.new(array) }
@@ -56,6 +65,30 @@ describe Loc::LocationCollection do
       expect(
         collection.map{|l| l.class.name }
       ).to eq(["Loc::Location", "Loc::Location"])
+    end
+  end
+
+  describe "#shift" do
+    let(:array) { [Loc::Location[1, 2], Loc::Location[3, 4]] }
+    let(:collection) { described_class.new(array) }
+    it "should give first element" do
+      expect(collection.shift).to eq Loc::Location[1, 2]
+    end
+    it "should remove first element" do
+      collection.shift
+      expect(collection.locations).to eq [Loc::Location[3, 4]]
+    end
+  end
+
+  describe "#pop" do
+    let(:array) { [Loc::Location[1, 2], Loc::Location[3, 4]] }
+    let(:collection) { described_class.new(array) }
+    it "should give last element" do
+      expect(collection.pop).to eq Loc::Location[3, 4]
+    end
+    it "should remove last element" do
+      collection.pop
+      expect(collection.locations).to eq [Loc::Location[1, 2]]
     end
   end
 

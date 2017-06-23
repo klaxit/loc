@@ -27,6 +27,10 @@ module Loc
       end
     end
 
+    def size
+      locations.size
+    end
+
     def [](*args)
       locations[*args]
     end
@@ -37,6 +41,14 @@ module Loc
 
     def map
       locations.map { |l| yield l }
+    end
+
+    def shift
+      locations.shift
+    end
+
+    def pop
+      locations.pop
     end
 
     def ==(other)
