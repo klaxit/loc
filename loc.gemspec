@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Cyrille Courtière"]
   s.email       = ["cyrille@wayzup.com"]
   s.homepage    = "http://github.com/wayzup/loc"
-  s.summary     = "Location handling & arithmetics"
+  s.summary     = "Location handling & geographical computations"
   s.license     = "MIT"
 
   s.files = `git ls-files -- lib/*`.split("\n")
