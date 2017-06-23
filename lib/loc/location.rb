@@ -19,11 +19,11 @@ module Loc
       alias from_a from_array
     end
 
-    # Calculate the geodesic distance in meters betwen the object
+    # Calculate the distance in meters betwen the object
     # and another location using the 'Haversine' formula.
     # Params :
     # +other+:: Location
-    def geodesic_distance(other)
+    def distance_to(other)
       dlat = to_radians(other.lat - lat)
       dlon = to_radians(other.lng - lng)
       a = Math.sin(dlat / 2) * Math.sin(dlat / 2) +
@@ -33,17 +33,17 @@ module Loc
       6371 * c * 1000
     end
 
-    # Calculate the bearing from the object to another.
+    # Give the bearing from the object to the other.
     # Params :
     # +other+:: Location
-    def linear_bearing(other)
+    def bearing_to(other)
       dlat = to_radians(other.lat - lat)
       dlng = to_radians(other.lng - lng)
       bearing = Math.atan2(dlat, dlng)
       (90 - to_degrees(bearing) + 360) % 360
     end
 
-    # Calculate the number of latitude degrees
+    # Give the number of latitude degrees
     # for a kilometer distance at location
     def lat_degrees_per_km
       1 / 111.195
@@ -52,7 +52,7 @@ module Loc
     # Calculate the number of longitude degrees
     # for kilometer distance at location
     def lng_degrees_per_km
-      1 / (geodesic_distance(Location[lat, lng + 1]) / 1000)
+      1 / (distance_to(Location[lat, lng + 1]) / 1000)
     end
 
     def ==(other)

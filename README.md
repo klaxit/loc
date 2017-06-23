@@ -33,10 +33,10 @@ loc1.lng_degrees_per_km
 
 loc2 = Loc::Location[50, 3]
 
-loc1.geodesic_distance(loc2)
+loc1.distance_to(loc2)
 # 123364.76538823603
 
-loc1.linear_bearing(loc2)
+loc1.bearing_to(loc2)
 # 48.01278750418339
 ```
 
@@ -47,8 +47,8 @@ require "loc"
 
 collection = Loc::LocationCollection[[1,2],[3,4]]
 
-collection.path_geodesic_distance
-# 314402
+collection.distance
+# 314402.95102362486
 
 collection[0]
 # <Loc::Location {:lat=>1, :lng=>2}>

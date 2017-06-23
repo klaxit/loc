@@ -20,11 +20,11 @@ describe Loc::LocationCollection do
     expect(collection[1]).to eq Loc::Location[3, 4]
   end
 
-  it "should give geodesic distance between given locations" do
+  it "should give geodesic distance between ordered locations" do
     locs = described_class.new([[48.836391, 2.305466],
                                 [45.832005, 1.258509],
                                 [43.124911, 5.932486]])
-    expect(locs.path_geodesic_distance).to eq 820_733
+    expect(locs.distance).to eq 820733.413593472
   end
 
   it "should understand equality" do

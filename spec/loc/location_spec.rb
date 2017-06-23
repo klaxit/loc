@@ -13,16 +13,16 @@ describe Loc::Location do
     expect(location.lng).to eq 2
   end
 
-  it "should give the geodesic distance in meters using \"Haversine\" formula" do
+  it "should give the distance in meters using \"Haversine\" formula" do
     loc1 = described_class.new(50.0359, -0.054253)
     loc2 = described_class.new(58.3838, -0.030412)
-    expect(loc1.geodesic_distance(loc2).round(0)).to eq 928_245
+    expect(loc1.distance_to(loc2)).to eq 928245.4072998187
   end
 
   it "should give bearing from object to another" do
     loc1 = described_class.new(48.89364, 2.33739)
     loc2 = described_class.new(48.91071, 2.00597)
-    expect(loc1.linear_bearing(loc2).round).to eq 273
+    expect(loc1.bearing_to(loc2)).to eq 272.9484505245889
   end
 
   it "should give latitude degrees per kilometer" do

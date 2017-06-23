@@ -18,13 +18,13 @@ module Loc
       alias from_a from_array
     end
 
-    # Give the geodesic distance in meters between ordered
+    # Give the distance in meters between ordered
     # location points using the 'Haversine' formula
-    def path_geodesic_distance
+    def distance
       return nil unless @locations.size > 1
       locations.each_cons(2).reduce(0) do |acc, (loc1, loc2)|
-        acc + loc1.geodesic_distance(loc2)
-      end.to_i
+        acc + loc1.distance_to(loc2)
+      end
     end
 
     def [](*args)
