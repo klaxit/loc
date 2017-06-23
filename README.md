@@ -61,6 +61,14 @@ collection.map(&:to_a)
 # [[1, 2], [3, 4]]
 ```
 
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/wayzup/loc/tags).
+
+## Authors
+
+See the list of [contributors](https://github.com/wayzup/loc/contributors) who participated in this project.
+
 ## License
 
 Please see LICENSE
