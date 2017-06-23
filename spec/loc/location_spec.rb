@@ -13,6 +13,12 @@ describe Loc::Location do
     expect(location.lng).to eq 2
   end
 
+  it "can be accessed with [] syntax" do
+    location = described_class[1, 2]
+    expect(location[0]).to eq 1
+    expect(location[1]).to eq 2
+  end
+
   it "should give the distance in meters using \"Haversine\" formula" do
     loc1 = described_class.new(50.0359, -0.054253)
     loc2 = described_class.new(58.3838, -0.030412)

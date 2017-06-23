@@ -61,6 +61,10 @@ module Loc
       lat == other.lat && lng == other.lng
     end
 
+    def [](*args)
+      to_array[*args]
+    end
+
     def to_array
       [lat, lng]
     end
