@@ -20,25 +20,33 @@ describe Loc::Location do
   end
 
   it "should give the distance in meters using \"Haversine\" formula" do
-    loc1 = described_class.new(50.0359, -0.054253)
-    loc2 = described_class.new(58.3838, -0.030412)
-    expect(loc1.distance_to(loc2)).to eq 928245.4072998187
+    loc1 = described_class.new(50, 2)
+    loc2 = described_class.new(49, 3)
+    expect(loc1.distance_to(loc2)).to eq 132584.3578090791
   end
 
   it "should give bearing from object to another" do
-    loc1 = described_class.new(48.89364, 2.33739)
-    loc2 = described_class.new(48.91071, 2.00597)
-    expect(loc1.bearing_to(loc2)).to eq 272.9484505245889
+    loc1 = described_class.new(50, 2)
+    loc2 = described_class.new(51, 2)
+    expect(loc1.bearing_to(loc2)).to eq 0
+    loc2 = described_class.new(51, 3)
+    expect(loc1.bearing_to(loc2)).to eq 45.0
+    loc2 = described_class.new(50, 3)
+    expect(loc1.bearing_to(loc2)).to eq 90.0
+    loc2 = described_class.new(49, 2)
+    expect(loc1.bearing_to(loc2)).to eq 180.0
+    loc2 = described_class.new(50, 1)
+    expect(loc1.bearing_to(loc2)).to eq 270.0
   end
 
   it "should give latitude degrees per kilometer" do
-    loc = described_class.new(48.93021, 2.34657)
+    loc = described_class.new(50, 2)
     expect(loc.lat_degrees_per_km.round(7)).to eq 0.0089932
   end
 
   it "should give longitude degrees per kilometer" do
-    loc = described_class.new(48.93021, 2.34657)
-    expect(loc.lng_degrees_per_km.round(7)).to eq 0.0136889
+    loc = described_class.new(50, 2)
+    expect(loc.lng_degrees_per_km.round(7)).to eq 0.0139911
   end
 
   it "can understand equality" do
