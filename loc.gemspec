@@ -7,8 +7,8 @@ Gem::Specification.new do |s|
   s.version     = Loc::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Cyrille Courtière"]
-  s.email       = ["cyrille@wayzup.com"]
-  s.homepage    = "http://github.com/wayzup/loc"
+  s.email       = ["cyrille@klaxit.com"]
+  s.homepage    = "http://github.com/klaxit/loc"
   s.summary     = "Location handling & geographical computations"
   s.license     = "MIT"
 
