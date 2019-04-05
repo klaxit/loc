@@ -35,6 +35,11 @@ describe Loc::LocationCollection do
     expect(collection_1).to_not eq collection_3
   end
 
+  it "should be enumerable" do
+    expect(subject).to be_a Enumerable
+    expect(subject).to respond_to :each_cons
+  end
+
   describe "#size" do
     it "should give location collection size" do
       collection = described_class.new(

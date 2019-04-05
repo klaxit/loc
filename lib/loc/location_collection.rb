@@ -1,5 +1,6 @@
 module Loc
   class LocationCollection
+    include Enumerable
     attr_reader :locations
 
     def initialize(locations = [])
@@ -37,10 +38,6 @@ module Loc
 
     def each(&block)
       locations.each(&block)
-    end
-
-    def map
-      locations.map { |l| yield l }
     end
 
     def shift
