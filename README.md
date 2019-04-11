@@ -63,11 +63,11 @@ collection.map(&:to_a)
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/wayzup/loc/tags).
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/klaxit/loc/tags).
 
 ## Authors
 
-See the list of [contributors](https://github.com/wayzup/loc/contributors) who participated in this project.
+See the list of [contributors](https://github.com/klaxit/loc/contributors) who participated in this project.
 
 ## License
 
