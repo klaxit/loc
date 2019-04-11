@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Cyrille Courtière"]
   s.email       = ["cyrille@klaxit.com"]
-  s.homepage    = "http://github.com/klaxit/loc"
+  s.homepage    = "https://github.com/klaxit/loc"
   s.summary     = "Location handling & geographical computations"
   s.license     = "MIT"
 
