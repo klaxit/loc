@@ -3,6 +3,7 @@ module Loc
     attr_reader :lat, :lng
 
     def initialize(lat, lng)
+      raise TypeError unless lat.is_a?(Numeric) && lng.is_a?(Numeric)
       @lat = lat
       @lng = lng
     end
