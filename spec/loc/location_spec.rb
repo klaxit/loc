@@ -65,7 +65,7 @@ describe Loc::Location do
     expect(loc.to_a).to eq([1, 2])
   end
 
-  it "cant be created from strings" do
+  it "can't be created from strings" do
     expect { described_class.new("1", "2") }.to raise_error TypeError
   end
 end
