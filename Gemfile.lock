@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    loc (0.1.0)
+    loc (0.1.1)
 
 GEM
   remote: http://rubygems.org/
@@ -31,4 +31,4 @@ DEPENDENCIES
   rspec (~> 3.5)
 
 BUNDLED WITH
-   1.14.6
+   1.17.2
